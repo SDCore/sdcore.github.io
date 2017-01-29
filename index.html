@@ -1,44 +1,204 @@
-/* because simple is better... most of the time */
-<br /><br />
------------
-<br /><br />
-hi, my name is michael voell, you're probably here<br />
-because you want something i have to offer. well,<br />
-below is a little bit about myself and some of the<br />
-projects i've done in the past or are currently<br />
-working on, along with my resume.
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-<br /><br />
------------
-<br /><br />
+<style>
+@import 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600';
+body {
+	margin: 0;
+	padding: 0;
+	background: #F1F1F1;
+	font-family: 'Raleway', sans-serif;
+}
 
-resume: <a href="https://docs.google.com/document/d/1tzs4_ZSN-wkKc8eWyHtft6_5Vu-JFXyYfKldnfC7Q1g/edit?usp=sharing" target="_blank">click here!</a> (it opens in a new tab!)
+.text {
+	color: #FFF;
+	height: 91px;
+	padding: 10px;
+	font-size: 50px;
+	text-align: center;
+	background: #4274F4;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
 
-<br /><br />
------------
-<br /><br />
+.container {
+	width: 90%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-projects<br />
---------<br />
-<b>Route 60 Auto Wash & Detail - Detail Ticket Manager</b><br />
-<b>Description</b><br />
-This car wash used paper detail tickets, so I volunteered<br />
-to create a website for the sole purpose of creating<br />
-accessible anywhere with an internet connection.<br />
-Tickets were, of course, secured by an account so no<br />
-one except the manager was able to edit them, but<br />
-it made creating tickets a lot easier. This is still<br />
-used to this day.
-<br />
-Imgur Album: <a href="http://imgur.com/a/QrJqV" target="_blank">click here! (new tab)</a>
+.card {
+	width: 100%;
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
 
-<br /><br />
+.card-title {
+	font-size: 25px;
+	padding: 5px 10px;
+	border-bottom: 1px solid #DDD;
+}
 
-<b>Wash-Network (Temporary Name)</b><br />
-<b>Description</b><br />
-After making the above project, the boss of<br />
-the car wash chain asked me to make a website for<br />
-them. It's just a simple website, mainly design<br />
-over anything else.
-<br />
-Imgur Album: <a href="http://imgur.com/a/Ps2Fa" target="_blank">click here! (new tab)</a>
+.card-content {
+	padding: 10px;
+	font-size: 15px;
+	text-align: justify;
+}
+
+.project-card {
+	width: 100%;
+	margin-top: 15px;
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+	font-size: 20px;
+	padding: 3px 5px;
+	border-bottom: 1px solid #DDD;
+}
+
+.project-description {
+	padding: 7px 10px;
+	font-size: 15px;
+	text-align: justify;
+}
+</style>
+
+<div class="text"></div>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-4">
+		<div class="card">
+			<div class="card-title">About Me</div>
+			<div class="card-content">
+				Hi, my name is Michael Voell. I'm an 18 year old from northern Illinois, and I'm currently attending NIU for CompSci. You're probably here because you want something I have to offer. Well, this site contains some of the projects I've done in the past or are currently working on, along with my resume. Enjoy!
+				<br /><br />
+				-Michael
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card">
+			<div class="card-title">Projects</div>
+		</div>
+
+		<div class="project-card">
+			<div class="project-title"><a href="http://imgur.com/a/QrJqV" target="_blank">Detail Ticket Manager</a></div>
+			<div class="project-description">This car wash used paper detail tickets, so I volunteered to create a website for the sole purpose of creating accessible anywhere with an internet connection. Tickets were, of course, secured by an account so no one except the manager was able to edit them, but it made creating tickets a lot easier. This is still used to this day.</div>
+		</div>
+
+		<div class="project-card">
+			<div class="project-title"><a href="http://imgur.com/a/Ps2Fa" target="_blank">Wash-Network (Temporary Name)</a></div>
+			<div class="project-description">After making the above project, the boss of the car wash chain asked me to make a website for them. It's just a simple website, mainly design over anything else.</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card">
+			<div class="card-title">Module Here</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	'use strict';
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	// ——————————————————————————————————————————————————
+	// TextScramble
+	// ——————————————————————————————————————————————————
+
+	var TextScramble = function () {
+	  function TextScramble(el) {
+	    _classCallCheck(this, TextScramble);
+
+	    this.el = el;
+	    this.chars = '!<>-_\\/[]{}—=+*^?#________############';
+	    this.update = this.update.bind(this);
+	  }
+
+	  TextScramble.prototype.setText = function setText(newText) {
+	    var _this = this;
+
+	    var oldText = this.el.innerText;
+	    var length = Math.max(oldText.length, newText.length);
+	    var promise = new Promise(function (resolve) {
+	      return _this.resolve = resolve;
+	    });
+	    this.queue = [];
+	    for (var i = 0; i < length; i++) {
+	      var from = oldText[i] || '';
+	      var to = newText[i] || '';
+	      var start = Math.floor(Math.random() * 50);
+	      var end = start + Math.floor(Math.random() * 125);
+	      this.queue.push({ from: from, to: to, start: start, end: end });
+	    }
+	    cancelAnimationFrame(this.frameRequest);
+	    this.frame = 0;
+	    this.update();
+	    return promise;
+	  };
+
+	  TextScramble.prototype.update = function update() {
+	    var output = '';
+	    var complete = 0;
+	    for (var i = 0, n = this.queue.length; i < n; i++) {
+	      var _queue$i = this.queue[i];
+	      var from = _queue$i.from;
+	      var to = _queue$i.to;
+	      var start = _queue$i.start;
+	      var end = _queue$i.end;
+	      var char = _queue$i.char;
+
+	      if (this.frame >= end) {
+	        complete++;
+	        output += to;
+	      } else if (this.frame >= start) {
+	        if (!char || Math.random() < 0.05) {
+	          char = this.randomChar();
+	          this.queue[i].char = char;
+	        }
+	        output += '<span class="dud">' + char + '</span>';
+	      } else {
+	        output += from;
+	      }
+	    }
+	    this.el.innerHTML = output;
+	    if (complete === this.queue.length) {
+	      this.resolve();
+	    } else {
+	      this.frameRequest = requestAnimationFrame(this.update);
+	      this.frame++;
+	    }
+	  };
+
+	  TextScramble.prototype.randomChar = function randomChar() {
+	    return this.chars[Math.floor(Math.random() * this.chars.length)];
+	  };
+
+	  return TextScramble;
+	}();
+
+	// ——————————————————————————————————————————————————
+	// Example
+	// ——————————————————————————————————————————————————
+
+	var phrases = ['Michael Voell', '@SDCore'];
+
+	var el = document.querySelector('.text');
+	var fx = new TextScramble(el);
+
+	var counter = 0;
+	var next = function next() {
+	  fx.setText(phrases[counter]).then(function () {
+	    setTimeout(next, 2200);
+	  });
+	  counter = (counter + 1) % phrases.length;
+	};
+
+	next();
+</script>
