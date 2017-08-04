@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Michael Voell</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <meta name=”description” content=”Michael Voell, a 19 year old student and web developer/designer.”>
+    
+    <style>
+        .card {
+            text-align: justify;
+        }
+        
+        .myA {
+            color: #1976D2 !important;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-inner">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-9 name">
+                    <div class="txtScramble"></div>
+                    <small>Freelance Web Developer</small>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="contacts"><i class="fa fa-envelope-o"></i> &#115;&#100;&#99;&#46;&#119;&#101;&#98;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</div>
+                    <!-- <div class="contacts"><i class="fa fa-phone"></i> 608-302-9226</div> -->
+                    <div class="contacts"><i class="fa fa-map-marker"></i> Illinois, USA</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="second-header">
+        <div class="second-header-inner">
+            <a href="/">Home</a>
+            <a href="https://drive.google.com/file/d/0B_4noyhKQC7ocnVDVlhXS0hnTzA/view" target="_blank">Resume</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+    				<div class="card-content">
+    				    <div class="card-title"><a href="http://imgur.com/a/kGQ4l" target="_blank" class="myA">Nutrition Hacks</a></div>
+                        This was a project I had done for a client, mainly design and responsiveness.
+                    </div>
+                </div>
+    			<div class="card">
+    				<div class="card-content">
+    				    <div class="card-title"><a href="http://imgur.com/a/QrJqV" target="_blank" class="myA">Detail Ticket Manager</a></div>
+    				    This car wash used paper detail tickets, so I volunteered to create a website for the sole purpose of creating accessible anywhere with an internet connection. Tickets were, of course, secured by an account so no one except the manager was able to edit them, but it made creating tickets a lot easier. This is still used to this day.
+    				</div>
+    			</div>
+    			<div class="card">
+    				<div class="card-content">
+    				    <div class="card-title"><a href="http://imgur.com/a/Ps2Fa" target="_blank" class="myA">Wash-Network (Temporary Name)</a></div>
+    				    After making the above project, the boss of the car wash chain asked me to make a website for them. It's just a simple website, mainly design over anything else.
+    				</div>
+    			</div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+  					<div class="card-content">
+  					    <div class="card-title"><a href="http://i.imgur.com/cusQhLj.png" target="_blank" class="myA">myHub</a></div>
+  					    myHub is an in-progress project that focuses on giving specific information in one place for the user to use. At the moment, not much is there. Weather is pulled from the <a href="https://darksky.net/dev/" target="_blank">DarkSky API</a>, and directions are using <a href="https://developers.google.com/maps/documentation/directions/" target="_blank">Google Maps Directions API</a> and <a href="https://developers.google.com/maps/documentation/geocoding/intro" target="_blank">Google Maps Geocoding API</a>. In the future, I hope to have more information, such as RSS Feeds, Calender Events from a users Google Account, and more!
+  				    </div>
+  				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">.<div class="clear"></div></div>
+    
+</body>
+
+<script type="text/javascript">
+    'use strict';
+    
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+    var TextScramble = function () {
+        function TextScramble(el) {
+            _classCallCheck(this, TextScramble);
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#_#';
+            this.update = this.update.bind(this);
+        }
+        TextScramble.prototype.setText = function setText(newText) {
+            var _this = this;
+            var oldText = this.el.innerText;
+            var length = Math.max(oldText.length, newText.length);
+            var promise = new Promise(function (resolve) {
+                return _this.resolve = resolve;
+            });
+            this.queue = [];
+            for (var i = 0; i < length; i++) {
+                var from = oldText[i] || '';
+                var to = newText[i] || '';
+                var start = Math.floor(Math.random() * 75);
+                var end = start + Math.floor(Math.random() * 150);
+                this.queue.push({ from: from, to: to, start: start, end: end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+        };
+        TextScramble.prototype.update = function update() {
+            var output = '';
+            var complete = 0;
+            for (var i = 0, n = this.queue.length; i < n; i++) {
+                var _queue$i = this.queue[i];
+                var from = _queue$i.from;
+                var to = _queue$i.to;
+                var start = _queue$i.start;
+                var end = _queue$i.end;
+                var char = _queue$i.char;
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                }else if (this.frame >= start){
+                    if (!char || Math.random() < 0.05) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    output += '<span class="dud">' + char + '</span>';
+                }else{
+                    output += from;
+                }
+            }
+            this.el.innerHTML = output;
+                if (complete === this.queue.length) {
+                    this.resolve();
+                }else{
+                    this.frameRequest = requestAnimationFrame(this.update);
+                    this.frame++;
+                }
+            };
+            TextScramble.prototype.randomChar = function randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        };
+        return TextScramble;
+    }();
+
+    var phrases = ['Michael Voell', '@SD_Core', 'SDC'];
+    var el = document.querySelector('.txtScramble');
+    var fx = new TextScramble(el);
+    var counter = 0;
+    var next = function next() {
+        fx.setText(phrases[counter]).then(function () {
+            setTimeout(next, 2200);
+        });
+        counter = (counter + 1) % phrases.length;
+	};
+	next();
+</script>
+	
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96038782-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</html>
