@@ -112,8 +112,9 @@ hr {
     .card > .card-content > p {
       margin-top: 10px; }
       .card > .card-content > p > .role {
-        color: #e2c20f;
-        font-weight: bold; }
+        color: #E2C20F;
+        font-weight: bold;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
       .card > .card-content > p > .duration {
         color: #727272; }
   .card > .img {
